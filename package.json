@@ -1,0 +1,28 @@
+{
+  "name": "frontend-nanodegree-mobile-portfolio",
+  "version": "1.0.0",
+  "description": "grunt for page optimization",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/udacity/frontend-nanodegree-mobile-portfolio.git"
+  },
+  "keywords": [
+    "grunt",
+    "optimization"
+  ],
+  "author": "bnmlr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/udacity/frontend-nanodegree-mobile-portfolio/issues"
+  },
+  "homepage": "https://github.com/udacity/frontend-nanodegree-mobile-portfolio#readme",
+  "devDependencies": {
+    "grunt": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.0",
+    "load-grunt-tasks": "^3.4.1"
+  }
+}
