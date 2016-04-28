@@ -507,7 +507,7 @@ function updatePositions() {
   for (var i = 0; i < 5; i++) {
     phase[i] = Math.sin(top + (i % 5));
   }
-  var items = document.querySelectorAll('.mover');
+  var items = document.getElementsByClassName("mover");
   var itemsBasicLeft = [];
   for (var i = 0; i < 8; i++) {
     itemsBasicLeft[i] = items[i].basicLeft;
