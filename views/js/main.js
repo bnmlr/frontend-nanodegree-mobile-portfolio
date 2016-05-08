@@ -451,10 +451,11 @@ var resizePizzas = function(size) {
         default:
           console.log("bug in sizeSwitcher");
     }
+  //removed dom calls from loop
   var randomPizzas = document.getElementsByClassName("randomPizzaContainer"); 
-  
+  var pizzaLength = randomPizzas.length;
   // Iterates through pizzas and assigns new percent width
-  for (var i = 0; i < randomPizzas.length; i++) {
+  for (var i = 0; i < pizzaLength; i++) {
       randomPizzas[i].style.width = newWidth + "%";
     }
   }
@@ -470,8 +471,9 @@ var resizePizzas = function(size) {
 window.performance.mark("mark_start_generating"); // collect timing data
 
 // This for-loop actually creates and appends all of the pizzas when the page loads
+//Took DOM call out of loop
+var pizzasDiv = document.getElementById("randomPizzas");
 for (var i = 2; i < 100; i++) {
-  var pizzasDiv = document.getElementById("randomPizzas");
   pizzasDiv.appendChild(pizzaElementGenerator(i));
 }
 
@@ -511,12 +513,8 @@ function updatePositions() {
     phase[i] = Math.sin(top + (i % 5));
   }
   var items = document.getElementsByClassName("mover");
-  var itemsBasicLeft = [];
-  for (var j = 0; j < 8; j++) {
-    itemsBasicLeft[j] = items[j].basicLeft;
-  }
   for (var k = 0; k < items.length; k++) {
-    items[k].style.left = itemsBasicLeft[k%8] + 100 * phase[k%5] + 'px';
+    items[k].style.left = items[k].basicLeft + 100 * phase[k % 5] + 'px';
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
@@ -537,8 +535,10 @@ document.addEventListener('DOMContentLoaded', function() {
   "use strict";
   var cols = 8;
   var s = 256;
+  //moved elem outside the loop to avoid repeat creation
+  var elem;
   for (var i = 0; i < 50; i++) {
-    var elem = document.createElement('img');
+    elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
     elem.style.height = "100px";

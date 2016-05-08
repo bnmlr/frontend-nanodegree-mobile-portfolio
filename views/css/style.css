@@ -29,7 +29,9 @@ form {
   font-weight: 800;
 }
 
+/** added transform to trigger gpu**/
 .mover {
+  transform: translateZ(0);
   position: fixed;
   width: 256px;
   z-index: -1;
