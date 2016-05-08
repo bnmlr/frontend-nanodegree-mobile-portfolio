@@ -14,4 +14,8 @@ Optimization steps:
 1. Decreased the number of animated pizzas in the background.
 2. Avoided forced synchronous layout on animated background pizzas by moving layout triggers out of loops
 3. Streamlined pizza resize code by following Cameron's advice in Compositing and Painting lesson
+4. Futher streamlined loops by removing more DOM calls
+5. Added transform: translateZ(0) to trigger gpu
+
+Visit my [GitHub page](http://bnmlr.github.io/frontend-nanodegree-mobile-portfolio/views/pizza.html) to see the pizza page in action
 
